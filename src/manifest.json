@@ -1,0 +1,20 @@
+{
+  "name": "YouTube Music Autoplay",
+  "short_name": "YMusic",
+  "version": "0.0.1",
+  "description": "Autoconfirm \"Video paused. Continue watching?\"",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
+      "js": ["injected.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "images/icon_16x16.png",
+    "32": "images/icon_32x32.png",
+    "48": "images/icon_48x48.png",
+    "128": "images/icon_128x128.png"
+  },
+  "manifest_version": 2
+}
