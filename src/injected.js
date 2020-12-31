@@ -1,7 +1,7 @@
     
 (function () {
 
-console.log("LOADED!");
+console.log("LOADED #YouTube Music Autoplay");
 var IDLE_TIMEOUT = 2000; 
 var _idleStartTime = 0;
 
@@ -18,7 +18,7 @@ function isIDLE(){
 
 
 function initPlayerContainer(){
-    console.log("initPlayerContainer");
+    // console.log("initPlayerContainer");
     let timerId = setTimeout(function tick() {
         let video = document.querySelector("video");
         if (video == undefined) {
@@ -31,10 +31,10 @@ function initPlayerContainer(){
 }
 
 function addEvent(videoElement) {
-    console.log("PATCH VIDEO");
+    console.log("Adding observers");
     videoElement.addEventListener("pause", (e) => {
         if (!isIDLE()) { 
-            console.log("not idle");
+            // console.log("not idle");
             return;
         }
         
@@ -46,6 +46,7 @@ function addEvent(videoElement) {
                 if(ell){
                     ell.click();
                 }
+                video.play(); 
             }
         }, 2000);
     });
